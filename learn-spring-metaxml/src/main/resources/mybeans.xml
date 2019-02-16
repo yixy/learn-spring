@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="cat" class="me.sweeat.dojo.Cat">
+        <property name="color"><value>white</value></property>
+        <property name="age"><value>1</value></property>
+    </bean>
+
+    <bean id="dog" class="me.sweeat.dojo.Dog">
+        <constructor-arg index = "0" type="java.lang.String" >
+            <value>Brown</value>
+        </constructor-arg>
+        <constructor-arg index = "1" type="int" >
+            <value>3</value>
+        </constructor-arg>
+        <constructor-arg index = "2" type="double" >
+            <value>3000</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="catFactory" class="me.sweeat.dojo.CatFactory"/>
+    <bean id="yellowcat" factory-bean="catFactory" factory-method="createYellowCat"/>
+    <bean id="blackcat" class="me.sweeat.dojo.CatFactory" factory-method="createBlackCat"/>
+</beans>
