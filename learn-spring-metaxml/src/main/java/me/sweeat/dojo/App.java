@@ -23,9 +23,16 @@ public class App
         //静态工厂注入
         Cat blackCat=context.getBean("blackcat",Cat.class);
 
+        //注入参数：引入其他bean
+        Zoo zoo1=context.getBean("zoo1",Zoo.class);
+        //注入参数：内部bean
+        Zoo zoo2=context.getBean("zoo2",Zoo.class);
+
         System.out.println("cat color:"+cat.color);
         System.out.println("dog color:"+dog.color);
         System.out.println("dog yellowCat:"+yellowCat.color);
         System.out.println("dog blackCat:"+blackCat.color);
+        System.out.println("zoo cat color:"+zoo1.getCat().color);
+        System.out.println("zoo rabbit color:"+zoo2.getRabbit().color);
     }
 }

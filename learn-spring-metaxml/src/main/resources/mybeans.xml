@@ -24,4 +24,17 @@
     <bean id="catFactory" class="me.sweeat.dojo.CatFactory"/>
     <bean id="yellowcat" factory-bean="catFactory" factory-method="createYellowCat"/>
     <bean id="blackcat" class="me.sweeat.dojo.CatFactory" factory-method="createBlackCat"/>
+
+    <bean id="zoo1" class="me.sweeat.dojo.Zoo">
+        <property name="cat"> <ref bean="cat"/> </property>
+    </bean>
+
+    <bean id="zoo2" class="me.sweeat.dojo.Zoo">
+        <property name="rabbit">
+            <bean class="me.sweeat.dojo.Rabbit">
+                <property name="color" value="white" />
+                <property name="age" value="1" />
+            </bean>
+        </property>
+    </bean>
 </beans>
