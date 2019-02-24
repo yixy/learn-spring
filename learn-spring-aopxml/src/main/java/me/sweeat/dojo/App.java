@@ -29,7 +29,14 @@ public class App
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath*:mybeans.xml");
         //前置增强
         Target target = (Target) context.getBean("mytarget");
-        target.doSomething("spring xml");
+        target.doSomething("spring xml doSomething");
+        try{
+            target.doSomethingEx("spring xml doSomethingEx");
+        }catch (Exception e){
 
+        }
+        FlagInt targetFlag=(FlagInt)target;
+        targetFlag.setFlag("enable");
+        target.doSomething("spring xml doSomething with flag.");
     }
 }

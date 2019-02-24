@@ -4,9 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
     <bean id="before" class="me.sweeat.dojo.Before"/>
+    <bean id="after" class="me.sweeat.dojo.After"/>
+    <bean id="intercept" class="me.sweeat.dojo.Intercept"/>
+    <bean id="throw" class="me.sweeat.dojo.Throw"/>
+    <bean id="introduction" class="me.sweeat.dojo.IntroductionIntercept"/>
     <bean id="target" class="me.sweeat.dojo.Target"/>
     <bean id="mytarget" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="interceptorNames" value="before"> </property>
+        <property name="interfaces" value="me.sweeat.dojo.FlagInt"/>
+        <property name="interceptorNames">
+            <list>
+                <idref bean="before"/>
+                <idref bean="after"/>
+                <idref bean="intercept"/>
+                <idref bean="throw"/>
+                <idref bean="introduction"/>
+            </list>
+        </property>
         <property name="target" > <ref bean="target"/></property>
+        <property name="proxyTargetClass" value="true"/>
     </bean>
 </beans>
