@@ -12,6 +12,7 @@
     <module>learn-spring-resourceload</module>
       <module>learn-spring-metaxml</module>
       <module>learn-spring-aopxml</module>
+      <module>learn-spring-datasource</module>
   </modules>
 
   <name>learn-spring</name>
