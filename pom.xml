@@ -15,6 +15,7 @@
       <module>learn-spring-datasource</module>
       <module>learn-spring-metaannotation</module>
       <module>learn-spring-metajavaconfig</module>
+      <module>learn-spring-lookup</module>
   </modules>
 
   <name>learn-spring</name>
