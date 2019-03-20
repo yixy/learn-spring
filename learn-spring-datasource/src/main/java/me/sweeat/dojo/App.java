@@ -9,7 +9,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
 
 /**
  * Hello world!
@@ -50,7 +49,7 @@ public class App
                 System.out.println(result.getString(2));
             }
         }catch (Exception e){
-            System.out.println("Hello Exception!"+e.getMessage() );
+            System.out.println("DataSource Exception!"+e.getMessage() );
         }
 
     }
