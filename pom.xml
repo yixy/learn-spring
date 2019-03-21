@@ -16,6 +16,7 @@
       <module>learn-spring-metaannotation</module>
       <module>learn-spring-metajavaconfig</module>
       <module>learn-spring-lookup</module>
+      <module>learn-spring-factorybean</module>
   </modules>
 
   <name>learn-spring</name>
